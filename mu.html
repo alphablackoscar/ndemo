@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name=”robots” content=”noindex” />
-    <title>Dropbox 音楽プレイヤー</title>
+    <title>U2sheming</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         .song-list { list-style: none; padding: 0; }
@@ -20,42 +19,49 @@
             margin-left: auto;
             margin-right: auto;
             text-align: center;
+            background-color: #FFFFFF; /* デフォルトの白 */
+            transition: background-color 0.3s ease;
         }
+        .playing { background-color: #404040; color: white; } /* 再生中のスタイル */
         audio { margin-top: 20px; width: 80%; max-width: 400px; }
     </style>
 </head>
 <body>
 
-    <h2>🎵 Dropbox ストリーミングプレイヤー 🎵</h2>
+    <h2>候補曲一覧</h2>
     <ul class="song-list">
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/1ietcleynmwsvftmm6sqe/Balanced-Medium.mp3?rlkey=iquo2j6v3ac0wgvvzy30ai4gk&st=76m0s0s9&raw=1')">オタクが彼女に望むこと</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/ymkfemzv5hqmuudn2i70e/Balanced-Medium.mp3?rlkey=z0x34nnn2nbn6dpvytzjen9ft&st=ju21zyco&raw=1')">全人類よ、私を好きになれ</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/td19xfzp0mlz4yyk157ec/Warm-High.mp3?rlkey=kdxo5uj70d39v0r955deguldl&st=r09ld60d&raw=1')">奇跡の夜</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/plganrxckbebxuq3igtbn/Open-High.mp3?rlkey=o8e4kdy9ohs1ke1qk387d4dv2&st=bvgvqe5g&raw=1')">とんこつ</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/k9wruxaezymdpje9dmk8m/Balanced-High.mp3?rlkey=svnoww3fw9vq3q2qbetdx8qtn&st=q1tz8ycu&raw=1')">#恋愛相談室に入室しました</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/vy4d36q93ls23s62azxgx/XER-Balanced-Medium.mp3?rlkey=034gxe968q2dims3wkbehzg9k&st=ynjrplvb&raw=1')">花火の下で</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/qgeyrqkgdcn6kz1zxfchw/ed-Balanced-High.mp3?rlkey=0b0t87wveq4f0d30r8q6pzar2&st=6j5p1uki&raw=1')">あいされたい</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/ugg3l08ifqhfo5e65snxg/ed-Balanced-High.mp3?rlkey=dkk1rg9h7x46co2bzq62vr1ck&st=t1dyhk2z&raw=1')">恋愛心理学</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/lygckayds2ietjwyxks9j/ed-Balanced-Medium.mp3?rlkey=djcnzen3897nx3tt8qtcaym4d&st=crzfxgjp&raw=1')">雨に消えた恋</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/cw4rptj1d8nb80yhvm54b/Balanced-Medium.mp3?rlkey=sa2fueut3dgcmjp6l74wkxrf5&st=a5qxg1np&raw=1')">どきどきバレンタイン</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/z53fd7cmjm23135vcnuof/Balanced-High.mp3?rlkey=qfzmwojqdzvo721jkjodu7n2s&st=u1t3cmz5&raw=1')">コスプレ天国</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/0wlt6rag00kalgo2szqb3/Balanced-Medium.mp3?rlkey=xalu1rks492bs923y5z9kgatl&st=zja9519v&raw=1')">上書き保存</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/6t37ks11yp1bn00nyzhq7/Balanced-High.mp3?rlkey=ea4kizlv2lb8gjpwfj4b6z011&st=gidul6i9&raw=1')">アイドルになりてえな</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/s47a629acg88nap9vvke7/ed-Balanced-Medium.mp3?rlkey=gjpixyxpfs11r6pwjfj6e2i3i&st=5qfenwir&raw=1')">やさしいことば</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/4ty0f41vxsj8sm6r6bpao/edited-Balanced-Medium.mp3?rlkey=rkoqo8x9bvigin7k0kd8h355w&st=d0lbwier&raw=1')">いちゃいちゃクリスマス</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/w33litm4z1a4o0jv47foy/org-Open-High.mp3?rlkey=uv4p6xhkoz00hdsyt4c5odukn&st=bow67zyu&raw=1')">シュミレーションデート</li>
-        <li onclick="playSong('https://www.dropbox.com/scl/fi/f33n0zx5g3m7hok4fsjzp/Open-High.mp3?rlkey=907l6xajh7n2tpjwrpmdikkcm&st=gj4b8b6y&raw=1')">アニメと私のカラフルライフ</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/1ietcleynmwsvftmm6sqe/Balanced-Medium.mp3?rlkey=iquo2j6v3ac0wgvvzy30ai4gk&st=76m0s0s9&raw=1')">オタクが彼女に望むこと</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/ymkfemzv5hqmuudn2i70e/Balanced-Medium.mp3?rlkey=z0x34nnn2nbn6dpvytzjen9ft&st=ju21zyco&raw=1')">全人類よ、私を好きになれ</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/td19xfzp0mlz4yyk157ec/Warm-High.mp3?rlkey=kdxo5uj70d39v0r955deguldl&st=r09ld60d&raw=1')">奇跡の夜</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/plganrxckbebxuq3igtbn/Open-High.mp3?rlkey=o8e4kdy9ohs1ke1qk387d4dv2&st=bvgvqe5g&raw=1')">とんこつ</li>
     </ul>
 
-    <audio id="audioPlayer" controls>
-        あなたのブラウザはオーディオタグをサポートしていません。
-    </audio>
+    <audio id="audioPlayer" controls></audio>
 
     <script>
-        function playSong(url) {
+        var currentPlaying = null;
+
+        function playSong(element, url) {
             var audio = document.getElementById('audioPlayer');
+
+            // 現在の再生中の曲の背景色を元に戻す
+            if (currentPlaying) {
+                currentPlaying.classList.remove('playing');
+            }
+
+            // 新しい曲の背景色を変更
+            element.classList.add('playing');
+            currentPlaying = element;
+
+            // 音楽を再生
             audio.src = url;
             audio.play();
+
+            // 再生が終わったら背景色を元に戻す
+            audio.onended = function() {
+                element.classList.remove('playing');
+                currentPlaying = null;
+            };
         }
     </script>
 
