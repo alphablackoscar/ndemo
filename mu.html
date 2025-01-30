@@ -22,13 +22,13 @@
             background-color: #FFFFFF; /* デフォルトの白 */
             transition: background-color 0.3s ease;
         }
-        .playing { background-color: #404040 !important; color: white; } /* 再生中のスタイル */
+        .playing { background-color: #dcdcdc !important; } /* 再生中は薄いグレー */
         audio { margin-top: 20px; width: 80%; max-width: 400px; }
     </style>
 </head>
 <body>
 
-    <h2>候補曲</h2>
+    <h2>🎵 Dropbox ストリーミングプレイヤー 🎵</h2>
     <ul class="song-list">
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/1ietcleynmwsvftmm6sqe/Balanced-Medium.mp3?rlkey=iquo2j6v3ac0wgvvzy30ai4gk&st=76m0s0s9&raw=1')">オタクが彼女に望むこと</li>
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/ymkfemzv5hqmuudn2i70e/Balanced-Medium.mp3?rlkey=z0x34nnn2nbn6dpvytzjen9ft&st=ju21zyco&raw=1')">全人類よ、私を好きになれ</li>
@@ -53,13 +53,10 @@
             // 現在の再生中の曲の背景色を元に戻す
             if (currentPlaying) {
                 currentPlaying.classList.remove('playing');
-                currentPlaying.style.backgroundColor = "#FFFFFF"; // 元の色に戻す
             }
 
             // 新しい曲の背景色を変更
             element.classList.add('playing');
-            element.style.backgroundColor = "#404040"; // 再生中の色
-            element.style.color = "white"; // テキスト色も変更
             currentPlaying = element;
 
             // 音楽を再生
@@ -69,8 +66,6 @@
             // 再生が終わったら背景色を元に戻す
             audio.onended = function() {
                 element.classList.remove('playing');
-                element.style.backgroundColor = "#FFFFFF"; // 元の白に戻す
-                element.style.color = "blue"; // テキスト色も元に戻す
                 currentPlaying = null;
             };
         }
