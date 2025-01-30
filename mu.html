@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropbox 音楽プレイヤー</title>
+    <title>音楽プレイヤー</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         .song-list { list-style: none; padding: 0; }
@@ -24,14 +24,18 @@
         }
         .playing { 
             background-color: #dcdcdc !important; /* 再生中は薄いグレー */
-            color: blue !important;  /* 文字色を強制的に青に固定 */
+            color: blue !important;  /* 文字色を常に青に固定 */
         }
-        audio { margin-top: 20px; width: 80%; max-width: 400px; }
+        audio { margin: 20px auto; width: 80%; max-width: 400px; display: block; }
     </style>
 </head>
 <body>
 
-    <h2>候補曲</h2>
+    <h2>候補曲リスト</h2>
+
+    <!-- 1. audioタグを上に配置 -->
+    <audio id="audioPlayer" controls></audio>
+
     <ul class="song-list">
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/1ietcleynmwsvftmm6sqe/Balanced-Medium.mp3?rlkey=iquo2j6v3ac0wgvvzy30ai4gk&st=76m0s0s9&raw=1')">オタクが彼女に望むこと</li>
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/ymkfemzv5hqmuudn2i70e/Balanced-Medium.mp3?rlkey=z0x34nnn2nbn6dpvytzjen9ft&st=ju21zyco&raw=1')">全人類よ、私を好きになれ</li>
@@ -41,9 +45,9 @@
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/vy4d36q93ls23s62azxgx/XER-Balanced-Medium.mp3?rlkey=034gxe968q2dims3wkbehzg9k&st=ynjrplvb&raw=1')">花火の下で</li>
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/qgeyrqkgdcn6kz1zxfchw/ed-Balanced-High.mp3?rlkey=0b0t87wveq4f0d30r8q6pzar2&st=6j5p1uki&raw=1')">あいされたい</li>
         <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/ugg3l08ifqhfo5e65snxg/ed-Balanced-High.mp3?rlkey=dkk1rg9h7x46co2bzq62vr1ck&st=t1dyhk2z&raw=1')">恋愛心理学</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/lygckayds2ietjwyxks9j/ed-Balanced-Medium.mp3?rlkey=djcnzen3897nx3tt8qtcaym4d&st=crzfxgjp&raw=1')">雨に消えた恋</li>
+        <li onclick="playSong(this, 'https://www.dropbox.com/scl/fi/cw4rptj1d8nb80yhvm54b/Balanced-Medium.mp3?rlkey=sa2fueut3dgcmjp6l74wkxrf5&st=a5qxg1np&raw=1')">どきどきバレンタイン</li>
     </ul>
-
-    <audio id="audioPlayer" controls></audio>
 
     <script>
         var currentPlaying = null;
