@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox 音楽プレイヤー</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .song-list { list-style: none; padding: 0; }
+        .song-list li { margin: 10px 10px; padding: 10px; cursor: pointer; color: blue; text-decoration: underline; border: 1px solid #ccc; display: inline-block; }
+        audio { margin-top: 20px; width: 80%; max-width: 400px; }
+    </style>
+</head>
+<body>
+
+    <h2>🎵 Dropbox ストリーミングプレイヤー 🎵</h2>
+    <ul class="song-list">
+        <li onclick="playSong('https://www.dropbox.com/scl/fi/1ietcleynmwsvftmm6sqe/Balanced-Medium.mp3?rlkey=iquo2j6v3ac0wgvvzy30ai4gk&st=76m0s0s9&raw=1')">オタクが彼女に望むこと</li>
+        <li onclick="playSong('https://www.dropbox.com/scl/fi/ymkfemzv5hqmuudn2i70e/Balanced-Medium.mp3?rlkey=z0x34nnn2nbn6dpvytzjen9ft&st=ju21zyco&raw=1')">全人類よ、私を好きになれ</li>
+        <li onclick="playSong('https://www.dropbox.com/scl/fi/td19xfzp0mlz4yyk157ec/Warm-High.mp3?rlkey=kdxo5uj70d39v0r955deguldl&st=r09ld60d&raw=1')">奇跡の夜</li>
+        <li onclick="playSong('https://www.dropbox.com/scl/fi/plganrxckbebxuq3igtbn/Open-High.mp3?rlkey=o8e4kdy9ohs1ke1qk387d4dv2&st=bvgvqe5g&raw=1')">とんこつ</li>
+    </ul>
+
+    <audio id="audioPlayer" controls>
+        あなたのブラウザはオーディオタグをサポートしていません。
+    </audio>
+
+    <script>
+        function playSong(url) {
+            var audio = document.getElementById('audioPlayer');
+            audio.src = url;
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
